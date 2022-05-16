@@ -20,6 +20,15 @@ body {
     flex-direction: column;
   }
 
+  .game-intro p {
+    font-size: 16px;
+    font-family: "Verdana";
+  }
+
+  #game-title {
+      font-size: 70px;
+  }
+
   #excited-img {
       height: 15%;
       width: 15%;
@@ -36,7 +45,7 @@ body {
 }
 
 #arrows-img {
-    width: 200px;
+    width: 180px;
 }
 
 body button {
@@ -59,7 +68,7 @@ body button {
     align-items: center;
   }
   
-  #left-game-div {
+  #left-side-score {
     padding-top: 30px;
     height: 100vh;
     display: flex;
@@ -68,7 +77,7 @@ body button {
     flex-direction: column;
   }
 
-  #deceased-img {
+  #dizzy-img {
     height: 10%;
     width: 10%;
 }
