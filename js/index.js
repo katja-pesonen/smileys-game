@@ -7,8 +7,6 @@ let restartBtn = document.querySelector("#restart-button");
 let smileyLogo = document.querySelector("#excited-img");
 let mixedLogo = document.querySelector("#mixed-img");
 let arrows = document.querySelector("#arrows-img");
-let scoreDiv = document.querySelector("#score-div");
-let scoreElement = document.querySelector("#score");
 let dizzyLogo = document.querySelector("#dizzy-img");
 let blurb = document.querySelector("#intro-blurb");
 let gameIntroDiv = document.querySelector(".game-intro");
@@ -96,7 +94,7 @@ rockArray = [
 function startGame() {
 
   canvas.style.display = 'block'
-  scoreDiv.style.display = "block"
+  gameBoardDiv.style.display = 'block'
   startBtn.style.display = "none";
   arrows.style.display = "none";
   smileyLogo.style.display = "none";
@@ -129,7 +127,6 @@ function startGame() {
       rockArray[i].y <= playerY + playerHeight + rockSpeedValue
     ) {
       score = score + 1;
-      scoreElement.innerHTML = score;
     }
 
     //collision inside of for loop
@@ -146,6 +143,16 @@ function startGame() {
       gameOver = true;
     }
   }
+
+  // Scoreboard
+  ctx.font = "40px Georgia";
+  ctx.fillStyle = "black";
+  ctx.fillText(
+    `Score: ${score}`,
+    50,
+    50
+  );
+
 
   //move the player left and right
 
@@ -179,7 +186,6 @@ function drawEnding() {
     gameOverDiv.style.display = "flex"
     gameBoardDiv.style.display = 'none'
     canvas.style.display = 'none'
-    scoreDiv.style.display = 'none'
     }
 
 
@@ -205,8 +211,9 @@ window.onload = () => {
     canvas.style.display = 'none'
     restartBtn.style.display = "none";
     dizzyLogo.style.display = "none";
-    scoreDiv.style.display = "none"
     arrows.style.display = "block";
+    gameOverDiv.style.display = "none"
+    gameBoardDiv.style.display = 'none'
 
   document.getElementById('start-button').onclick = () => {
     console.log("start clicked");
@@ -214,19 +221,7 @@ window.onload = () => {
   }
 
   restartBtn.addEventListener("click", () => {
-    gameOver = false;
-
-    rockArray = [
-      { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
-      { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 110, height: 110 },
-      { img: imgRock3, x: randomXPlacement(), y: -1600, width: 110, height: 110 },
-      { img: specialRock, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
-      { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 110 },
-      { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 110, height: 110 },
-      { img: imgRock3, x: randomXPlacement(), y: -4300, width: 110, height: 110 },
-      { img: specialRock, x: randomXPlacement(), y: -5000, width: 110, height: 110 },
-    ];
-
-    startGame(); 
-  });
+    window.location.reload();
+  }
+  )
 };

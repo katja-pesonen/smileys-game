@@ -71,14 +71,6 @@ body button {
   align-items: center;
 }
 
-#left-side-score {
-  padding-top: 30px;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
 
 #dizzy-img {
   height: 15rem;
