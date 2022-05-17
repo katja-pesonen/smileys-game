@@ -12,7 +12,7 @@ let scoreElement = document.querySelector("#score");
 let dizzyLogo = document.querySelector("#dizzy-img");
 let blurb = document.querySelector("#intro-blurb");
 let gameIntroDiv = document.querySelector(".game-intro");
-let gameBoardDiv = document.querySelector(".game-board");
+let gameBoardDiv = document.querySelector("#game-board");
 let gameOverDiv = document.querySelector(".game-over");
 
 //field image
@@ -79,14 +79,14 @@ let randomXPlacement = () => {
 
 //rocks group information
 rockArray = [
-  { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 170 },
-  { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 130, height: 220 },
-  { img: imgRock3, x: randomXPlacement(), y: -1600, width: 130, height: 220 },
-  { img: specialRock, x: randomXPlacement(), y: -2300, width: 240, height: 520 },
-  { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 170 },
-  { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 130, height: 220 },
-  { img: imgRock3, x: randomXPlacement(), y: -4300, width: 130, height: 220 },
-  { img: specialRock, x: randomXPlacement(), y: -5000, width: 240, height: 520 },
+  { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
+  { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 110, height: 110 },
+  { img: imgRock3, x: randomXPlacement(), y: -1600, width: 110, height: 110 },
+  { img: specialRock, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
+  { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 110 },
+  { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 110, height: 110 },
+  { img: imgRock3, x: randomXPlacement(), y: -4300, width: 110, height: 110 },
+  { img: specialRock, x: randomXPlacement(), y: -5000, width: 110, height: 110 },
 ];
 
 
@@ -94,7 +94,6 @@ rockArray = [
 //When "Start Game" is clicked: 
 
 function startGame() {
-  let score = 0;
 
   canvas.style.display = 'block'
   scoreDiv.style.display = "block"
@@ -178,6 +177,7 @@ function drawEnding() {
     restartBtn.style.display = "block";
     dizzyLogo.style.display = "block";
     gameOverDiv.style.display = "flex"
+    gameBoardDiv.style.display = 'none'
     canvas.style.display = 'none'
     scoreDiv.style.display = 'none'
     }
@@ -214,18 +214,17 @@ window.onload = () => {
   }
 
   restartBtn.addEventListener("click", () => {
-    score = 0;
     gameOver = false;
 
     rockArray = [
-      { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 170 },
-      { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 130, height: 220 },
-      { img: imgRock3, x: randomXPlacement(), y: -1600, width: 130, height: 220 },
-      { img: specialRock, x: randomXPlacement(), y: -2300, width: 240, height: 520 },
-      { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 170 },
-      { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 130, height: 220 },
-      { img: imgRock3, x: randomXPlacement(), y: -4300, width: 130, height: 220 },
-      { img: specialRock, x: randomXPlacement(), y: -5000, width: 240, height: 520 },
+      { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
+      { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 110, height: 110 },
+      { img: imgRock3, x: randomXPlacement(), y: -1600, width: 110, height: 110 },
+      { img: specialRock, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
+      { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 110 },
+      { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 110, height: 110 },
+      { img: imgRock3, x: randomXPlacement(), y: -4300, width: 110, height: 110 },
+      { img: specialRock, x: randomXPlacement(), y: -5000, width: 110, height: 110 },
     ];
 
     startGame(); 
