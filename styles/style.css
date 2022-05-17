@@ -14,6 +14,7 @@ body {
       background-image: url("/images/background-yellow.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,13 +26,16 @@ body {
     font-family: "Verdana";
   }
 
+  #intro-blurb {
+    font-size: 22px;
+  }
+
   #game-title {
       font-size: 70px;
   }
 
   #excited-img {
-      height: 15%;
-      width: 15%;
+      width: 10%;
   }
 
   #background-img {
@@ -40,8 +44,7 @@ body {
   }
 
   #mixed-img {
-    height: 35%;
-    width: 35%;
+    width: 25%;
 }
 
 #arrows-img {
@@ -78,16 +81,20 @@ body button {
   }
 
   #dizzy-img {
-    height: 10%;
-    width: 10%;
+    height: 15rem;
+    margin-bottom: 30px;
+}
+
+#oops {
+  color:rgb(218, 199, 28);
 }
 
 .game-over {
     background-image: url("/images/gothic-wallpaper.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-  padding: 0% 10%;
-  width: 100%;
+    height: 100vh;
+    padding: 0% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
