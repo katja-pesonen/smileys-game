@@ -17,39 +17,39 @@ let finalScoreEnd = document.querySelector("#final-score");
 
 //field image
 const imgField = new Image();
-imgField.src = '/images/field-background.jpg';
+imgField.src = 'images/field-background.jpg';
 
 // falling rocks images
 const imgRock1 = new Image();
-imgRock1.src = '/images/Kuva1.png';
+imgRock1.src = 'images/Kuva1.png';
 const imgRock2 = new Image();
-imgRock2.src = '/images/Kuva2.png';
+imgRock2.src = 'images/Kuva2.png';
 const imgRock3 = new Image();
-imgRock3.src = '/images/Kuva3.png';
+imgRock3.src = 'images/Kuva3.png';
 const imgRock4 = new Image();
-imgRock4.src = '/images/Kuva4.png';
+imgRock4.src = 'images/Kuva4.png';
 
 // falling smileys images
 const imgSmiley1 = new Image();
-imgSmiley1.src = '/images/money-emoji.png';
+imgSmiley1.src = 'images/money-emoji.png';
 const imgSmiley2 = new Image();
-imgSmiley2.src = '/images/laugh.png';
+imgSmiley2.src = 'images/laugh.png';
 const imgSmiley3 = new Image();
-imgSmiley3.src = '/images/love.png';
+imgSmiley3.src = 'images/love.png';
 const imgSmiley4 = new Image();
-imgSmiley4.src = '/images/smiley.png';
+imgSmiley4.src = 'images/smiley.png';
 const imgSmiley5 = new Image();
-imgSmiley5.src = '/images/monocle.png';
+imgSmiley5.src = 'images/monocle.png';
 const imgSmiley6 = new Image();
-imgSmiley6.src = '/images/tongue.png';
+imgSmiley6.src = 'images/tongue.png';
 const imgSmiley7 = new Image();
-imgSmiley7.src = '/images/upside-down.png';
+imgSmiley7.src = 'images/upside-down.png';
 const imgSmiley8 = new Image();
-imgSmiley8.src = '/images/smirk.png';
+imgSmiley8.src = 'images/smirk.png';
 
 //player smiley image
 const imgPlayer = new Image();
-imgPlayer.src = '/images/smiling.png';
+imgPlayer.src = 'images/smiling.png';
 
 // player variables
 const playerWidth = 100;
