@@ -26,8 +26,8 @@ const imgRock2 = new Image();
 imgRock2.src = '../images/Kuva2.png';
 const imgRock3 = new Image();
 imgRock3.src = '../images/Kuva3.png';
-const specialRock = new Image();
-specialRock.src = '../images/money-emoji.png';
+const imgRock4 = new Image();
+imgRock4.src = '../images/Kuva4.png';
 
 //player smiley image
 const imgPlayer = new Image();
@@ -82,19 +82,19 @@ rockArray = [
   { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
   { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 80, height: 80 },
   { img: imgRock3, x: randomXPlacement(), y: -1600, width: 100, height: 100 },
-  { img: specialRock, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
+  { img: imgRock4, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
   { img: imgRock1, x: randomXPlacement(), y: -3000, width: 90, height: 90 },
   { img: imgRock2, x: randomXPlacement() - 200, y: -3700, width: 150, height: 150 },
   { img: imgRock3, x: randomXPlacement(), y: -4300, width: 120, height: 120 },
-  { img: specialRock, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
+  { img: imgRock4, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
   { img: imgRock1, x: randomXPlacement(), y: -400, width: 80, height: 80 },
   { img: imgRock2, x: randomXPlacement() - 500, y: -600, width: 130, height: 130 },
   { img: imgRock3, x: randomXPlacement(), y: -1000, width: 100, height: 100 },
-  { img: specialRock, x: randomXPlacement(), y: -2000, width: 80, height: 80 },
+  { img: imgRock4, x: randomXPlacement(), y: -2000, width: 80, height: 80 },
   { img: imgRock1, x: randomXPlacement(), y: -3500, width: 90, height: 90 },
   { img: imgRock2, x: randomXPlacement() - 400, y: -3000, width: 110, height: 110 },
   { img: imgRock3, x: randomXPlacement(), y: -4000, width: 120, height: 120 },
-  { img: specialRock, x: randomXPlacement(), y: -5200, width: 100, height: 100 },
+  { img: imgRock4, x: randomXPlacement(), y: -5200, width: 100, height: 100 },
 ];
 
 
