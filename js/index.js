@@ -222,6 +222,7 @@ function startGame() {
       //checks if the bottom of the player is touching the top of the smiley
       playerY + playerHeight - 10 > smileysArray[i].y
     ) {
+      smileysArray[i].y = -300;
       score = score + 2;
     }
   }
