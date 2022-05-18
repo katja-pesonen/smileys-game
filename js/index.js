@@ -19,7 +19,7 @@ let finalScoreEnd = document.querySelector("#final-score");
 const imgField = new Image();
 imgField.src = '../images/field-background.jpg';
 
-// rock images
+// falling rocks images
 const imgRock1 = new Image();
 imgRock1.src = '../images/Kuva1.png';
 const imgRock2 = new Image();
@@ -28,6 +28,24 @@ const imgRock3 = new Image();
 imgRock3.src = '../images/Kuva3.png';
 const imgRock4 = new Image();
 imgRock4.src = '../images/Kuva4.png';
+
+// falling smileys images
+const imgSmiley1 = new Image();
+imgSmiley1.src = '../images/money-emoji.png';
+const imgSmiley2 = new Image();
+imgSmiley2.src = '../images/laugh.png';
+const imgSmiley3 = new Image();
+imgSmiley3.src = '../images/love.png';
+const imgSmiley4 = new Image();
+imgSmiley4.src = '../images/smiley.png';
+const imgSmiley5 = new Image();
+imgSmiley5.src = '../images/monocle.png';
+const imgSmiley6 = new Image();
+imgSmiley6.src = '../images/tongue.png';
+const imgSmiley7 = new Image();
+imgSmiley7.src = '../images/upside-down.png';
+const imgSmiley8 = new Image();
+imgSmiley8.src = '../images/smirk.png';
 
 //player smiley image
 const imgPlayer = new Image();
@@ -97,6 +115,17 @@ rockArray = [
   { img: imgRock4, x: randomXPlacement(), y: -5200, width: 100, height: 100 },
 ];
 
+//smileys group information
+smileysArray = [
+  { img: imgSmiley1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
+  { img: imgSmiley2, x: randomXPlacement() - 300, y: -800, width: 80, height: 80 },
+  { img: imgSmiley3, x: randomXPlacement(), y: -1600, width: 100, height: 100 },
+  { img: imgSmiley4, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
+  { img: imgSmiley5, x: randomXPlacement(), y: -3000, width: 90, height: 90 },
+  { img: imgSmiley6, x: randomXPlacement() - 200, y: -3700, width: 150, height: 150 },
+  { img: imgSmiley7, x: randomXPlacement(), y: -4300, width: 120, height: 120 },
+  { img: imgSmiley8, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
+];
 
 
 //When "Start Game" is clicked: 
@@ -125,6 +154,7 @@ function startGame() {
   if (score > 90) {rockSpeedValue = 9}
 
 
+// for-loop for the falling rocks
   for (let i = 0; i < rockArray.length; i++) {
     ctx.drawImage(
       rockArray[i].img,
@@ -163,6 +193,39 @@ function startGame() {
       finalScoreEnd.innerHTML = score
     }
   }
+
+
+  // for-loop for the falling smileys
+  for (let i = 0; i < smileysArray.length; i++) {
+    ctx.drawImage(
+      smileysArray[i].img,
+      smileysArray[i].x,
+      smileysArray[i].y,
+      smileysArray[i].width,
+      smileysArray[i].height
+    );
+    smileysArray[i].y += rockSpeedValue;
+
+    //ctx.drawImage(smiley, middle + 50, height, 80, 150);
+    if (smileysArray[i].y > canvas.height) {
+      smileysArray[i].y = -5500;
+    }
+
+    //collision inside of for loop, if smiley hits player, score ++
+    if (
+      // checks if the bottom of smiley  is touching the top of  player
+      smileysArray[i].y + smileysArray[i].height >= playerY + 10 &&
+      //checks if the right side of the player is more to the right than the smiley
+      playerX + 120 > smileysArray[i].x &&
+      // checks if the left side of the player is touching the left side of the smiley
+      playerX < smileysArray[i].x + smileysArray[i].width &&
+      //checks if the bottom of the player is touching the top of the smiley
+      playerY + playerHeight - 10 > smileysArray[i].y
+    ) {
+      score = score + 2;
+    }
+  }
+
 
   // Scoreboard
   ctx.font = "40px Georgia";
