@@ -71,6 +71,10 @@ body button {
   align-items: center;
 }
 
+#end-score-h2 {
+  font-size:32px;
+  color:rgb(218, 199, 28);
+}
 
 #dizzy-img {
   height: 15rem;

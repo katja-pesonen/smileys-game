@@ -12,6 +12,8 @@ let blurb = document.querySelector("#intro-blurb");
 let gameIntroDiv = document.querySelector(".game-intro");
 let gameBoardDiv = document.querySelector("#game-board");
 let gameOverDiv = document.querySelector(".game-over");
+let finalScoreEnd = document.querySelector("#final-score");
+
 
 //field image
 const imgField = new Image();
@@ -65,8 +67,8 @@ function drawPlayer() {
 
   //generate random 'X' positions on the road for the traffic
 let randomXPlacement = () => {
-  let biggestX = canvas.width - 350;
-  let smallestX = 55;
+  let biggestX = canvas.width - 20;
+  let smallestX = 20;
   let randomX = Math.floor(
     Math.random() * (biggestX - smallestX + 1) + smallestX
   );
@@ -79,12 +81,20 @@ let randomXPlacement = () => {
 rockArray = [
   { img: imgRock1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
   { img: imgRock2, x: randomXPlacement() - 300, y: -800, width: 110, height: 110 },
-  { img: imgRock3, x: randomXPlacement(), y: -1600, width: 110, height: 110 },
+  { img: imgRock3, x: randomXPlacement(), y: -1600, width: 100, height: 100 },
   { img: specialRock, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
-  { img: imgRock1, x: randomXPlacement(), y: -3000, width: 110, height: 110 },
+  { img: imgRock1, x: randomXPlacement(), y: -3000, width: 90, height: 90 },
   { img: imgRock2, x: randomXPlacement() - 300, y: -3700, width: 110, height: 110 },
-  { img: imgRock3, x: randomXPlacement(), y: -4300, width: 110, height: 110 },
-  { img: specialRock, x: randomXPlacement(), y: -5000, width: 110, height: 110 },
+  { img: imgRock3, x: randomXPlacement(), y: -4300, width: 120, height: 120 },
+  { img: specialRock, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
+  { img: imgRock1, x: randomXPlacement(), y: -400, width: 110, height: 110 },
+  { img: imgRock2, x: randomXPlacement() - 500, y: -600, width: 130, height: 130 },
+  { img: imgRock3, x: randomXPlacement(), y: -1000, width: 100, height: 100 },
+  { img: specialRock, x: randomXPlacement(), y: -2000, width: 110, height: 110 },
+  { img: imgRock1, x: randomXPlacement(), y: -3500, width: 90, height: 90 },
+  { img: imgRock2, x: randomXPlacement() - 400, y: -3500, width: 110, height: 110 },
+  { img: imgRock3, x: randomXPlacement(), y: -4000, width: 120, height: 120 },
+  { img: specialRock, x: randomXPlacement(), y: -5200, width: 100, height: 100 },
 ];
 
 
@@ -105,6 +115,15 @@ function startGame() {
 
   drawField()
   drawPlayer()
+
+  // rocks speed increases as game progresses:
+  if (score > 10) {rockSpeedValue = 4}
+  if (score > 25) {rockSpeedValue = 5}
+  if (score > 40) {rockSpeedValue = 6}
+  if (score > 60) {rockSpeedValue = 7}
+  if (score > 75) {rockSpeedValue = 8}
+  if (score > 90) {rockSpeedValue = 9}
+
 
   for (let i = 0; i < rockArray.length; i++) {
     ctx.drawImage(
@@ -141,6 +160,7 @@ function startGame() {
       playerY + playerHeight - 10 > rockArray[i].y
     ) {
       gameOver = true;
+      finalScoreEnd.innerHTML = score
     }
   }
 
