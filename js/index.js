@@ -304,21 +304,23 @@ function drawEnding() {
     isPlayerGoingRight = false;
   });
 
+  
+  window.addEventListener("load", () => {
 
-
-window.onload = () => {
-    gameMusic.play()
-    
     canvas.style.display = 'none'
     restartBtn.style.display = "none";
     dizzyLogo.style.display = "none";
     arrows.style.display = "block";
     gameOverDiv.style.display = "none"
     gameBoardDiv.style.display = 'none'
+  
+  
 
   document.getElementById('start-button').onclick = () => {
     console.log("start clicked");
     startGame();
+    gameMusic.play()
+    
   }
 
   restartBtn.addEventListener("click", () => {
@@ -326,4 +328,5 @@ window.onload = () => {
     
   }
   )
-};
+
+});
