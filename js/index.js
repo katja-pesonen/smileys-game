@@ -16,13 +16,13 @@ let finalScoreEnd = document.querySelector("#final-score");
 
 // music & sound effects
 let gameMusic = new Audio("/audio/game-music.mp3");
-gameMusic.volume = 0.01; 
-
-let endMusic = new Audio("/audio/game-end-sound.mp3");
 gameMusic.volume = 0.1; 
 
+let endMusic = new Audio("/audio/game-end-sound.mp3");
+endMusic.volume = 0.1; 
+
 let rewardMusic = new Audio("/audio/ding-sound-effect.mp3");
-gameMusic.volume = 0.2; 
+rewardMusic.volume = 0.2; 
 
 
 //field image
@@ -113,11 +113,11 @@ rockArray = [
   { img: imgRock3, x: randomXPlacement(), y: -1600, width: 100, height: 100 },
   { img: imgRock4, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
   { img: imgRock1, x: randomXPlacement(), y: -3000, width: 90, height: 90 },
-  { img: imgRock2, x: randomXPlacement() - 200, y: -3700, width: 150, height: 150 },
+  { img: imgRock2, x: randomXPlacement() - 200, y: -3700, width: 110, height: 110 },
   { img: imgRock3, x: randomXPlacement(), y: -4300, width: 120, height: 120 },
   { img: imgRock4, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
   { img: imgRock1, x: randomXPlacement(), y: -400, width: 80, height: 80 },
-  { img: imgRock2, x: randomXPlacement() - 500, y: -600, width: 130, height: 130 },
+  { img: imgRock2, x: randomXPlacement() - 500, y: -600, width: 90, height: 90 },
   { img: imgRock3, x: randomXPlacement(), y: -1000, width: 100, height: 100 },
   { img: imgRock4, x: randomXPlacement(), y: -2000, width: 80, height: 80 },
   { img: imgRock1, x: randomXPlacement(), y: -3500, width: 90, height: 90 },
@@ -128,14 +128,14 @@ rockArray = [
 
 //smileys group information
 smileysArray = [
-  { img: imgSmiley1, x: randomXPlacement(), y: -200, width: 110, height: 110 },
+  { img: imgSmiley1, x: randomXPlacement(), y: -200, width: 100, height: 100 },
   { img: imgSmiley2, x: randomXPlacement() - 300, y: -800, width: 80, height: 80 },
   { img: imgSmiley3, x: randomXPlacement(), y: -1600, width: 100, height: 100 },
-  { img: imgSmiley4, x: randomXPlacement(), y: -2300, width: 110, height: 110 },
+  { img: imgSmiley4, x: randomXPlacement(), y: -2300, width: 80, height: 80 },
   { img: imgSmiley5, x: randomXPlacement(), y: -3000, width: 90, height: 90 },
-  { img: imgSmiley6, x: randomXPlacement() - 200, y: -3700, width: 150, height: 150 },
-  { img: imgSmiley7, x: randomXPlacement(), y: -4300, width: 120, height: 120 },
-  { img: imgSmiley8, x: randomXPlacement(), y: -5000, width: 100, height: 100 },
+  { img: imgSmiley6, x: randomXPlacement() - 200, y: -3700, width: 100, height: 100 },
+  { img: imgSmiley7, x: randomXPlacement(), y: -4300, width: 110, height: 110 },
+  { img: imgSmiley8, x: randomXPlacement(), y: -5000, width: 90, height: 90 },
 ];
 
 
@@ -269,7 +269,7 @@ function startGame() {
 if (gameOver) {
   drawEnding()
   endMusic.play()
-  gameMusic.stop()
+  gameMusic.pause()
   cancelAnimationFrame(animationFrameId);
 } else {
   animationFrameId = requestAnimationFrame(startGame);
@@ -323,6 +323,7 @@ window.onload = () => {
 
   restartBtn.addEventListener("click", () => {
     window.location.reload();
+    gameMusic.play()
   }
   )
 };

@@ -5,10 +5,11 @@ body {
 
 h1 {
   font-size: 6rem;
-  color: red;
+  color: black;
   background-color: none;
   padding: 15px;
 }
+
 
 .game-intro {
     background-image: url("../images/background-yellow.jpg");
