@@ -5,13 +5,13 @@ body {
 
 h1 {
   font-size: 6rem;
-  color: black;
+  color: red;
   background-color: none;
   padding: 15px;
 }
 
 .game-intro {
-    background-image: url("/images/background-yellow.jpg");
+    background-image: url("../images/background-yellow.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -91,7 +91,7 @@ color:rgb(218, 199, 28);
 }
 
 .game-over {
-  background-image: url("/images/gothic-wallpaper.jpg");
+  background-image: url("../images/gothic-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

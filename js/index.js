@@ -14,6 +14,16 @@ let gameBoardDiv = document.querySelector("#game-board");
 let gameOverDiv = document.querySelector(".game-over");
 let finalScoreEnd = document.querySelector("#final-score");
 
+// music & sound effects
+let gameMusic = new Audio("/audio/game-music.mp3");
+gameMusic.volume = 0.01; 
+
+let endMusic = new Audio("/audio/game-end-sound.mp3");
+gameMusic.volume = 0.1; 
+
+let rewardMusic = new Audio("/audio/ding-sound-effect.mp3");
+gameMusic.volume = 0.2; 
+
 
 //field image
 const imgField = new Image();
@@ -83,7 +93,7 @@ function drawPlayer() {
 }
 
 
-  //generate random 'X' positions on the road for the traffic
+  //generate random 'X' positions for falling rocks
 let randomXPlacement = () => {
   let biggestX = canvas.width - 20;
   let smallestX = 20;
@@ -93,6 +103,7 @@ let randomXPlacement = () => {
   console.log(randomX);
   return randomX;
 };
+
 
 
 //rocks group information
@@ -222,8 +233,10 @@ function startGame() {
       //checks if the bottom of the player is touching the top of the smiley
       playerY + playerHeight - 10 > smileysArray[i].y
     ) {
-      smileysArray[i].y = -300;
+      smileysArray[i].x = randomXPlacement()
+      smileysArray[i].y = -600;
       score = score + 2;
+      rewardMusic.play()
     }
   }
 
@@ -255,6 +268,8 @@ function startGame() {
 
 if (gameOver) {
   drawEnding()
+  endMusic.play()
+  gameMusic.stop()
   cancelAnimationFrame(animationFrameId);
 } else {
   animationFrameId = requestAnimationFrame(startGame);
@@ -298,6 +313,8 @@ window.onload = () => {
     arrows.style.display = "block";
     gameOverDiv.style.display = "none"
     gameBoardDiv.style.display = 'none'
+
+    gameMusic.play()
 
   document.getElementById('start-button').onclick = () => {
     console.log("start clicked");
