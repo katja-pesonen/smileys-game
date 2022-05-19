@@ -15,13 +15,13 @@ let gameOverDiv = document.querySelector(".game-over");
 let finalScoreEnd = document.querySelector("#final-score");
 
 // music & sound effects
-let gameMusic = new Audio("/audio/game-music.mp3");
+let gameMusic = new Audio("audio/game-music.mp3");
 gameMusic.volume = 0.1; 
 
-let endMusic = new Audio("/audio/game-end-sound.mp3");
+let endMusic = new Audio("audio/game-end-sound.mp3");
 endMusic.volume = 0.1; 
 
-let rewardMusic = new Audio("/audio/ding-sound-effect.mp3");
+let rewardMusic = new Audio("audio/ding-sound-effect.mp3");
 rewardMusic.volume = 0.2; 
 
 
@@ -307,14 +307,14 @@ function drawEnding() {
 
 
 window.onload = () => {
+    gameMusic.play()
+    
     canvas.style.display = 'none'
     restartBtn.style.display = "none";
     dizzyLogo.style.display = "none";
     arrows.style.display = "block";
     gameOverDiv.style.display = "none"
     gameBoardDiv.style.display = 'none'
-
-    gameMusic.play()
 
   document.getElementById('start-button').onclick = () => {
     console.log("start clicked");
@@ -323,7 +323,7 @@ window.onload = () => {
 
   restartBtn.addEventListener("click", () => {
     window.location.reload();
-    gameMusic.play()
+    
   }
   )
 };
