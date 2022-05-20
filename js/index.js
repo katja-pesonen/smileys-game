@@ -17,13 +17,13 @@ let finalScoreEnd = document.querySelector("#final-score");
 
 // music & sound effects
 let gameMusic = new Audio("audio/game-music.mp3");
-gameMusic.volume = 0.3; 
+gameMusic.volume = 0.1; 
 
 let endMusic = new Audio("audio/game-end-sound.mp3");
-endMusic.volume = 0.4; 
+endMusic.volume = 0.1; 
 
 let rewardMusic = new Audio("audio/ding-sound-effect.mp3");
-rewardMusic.volume = 0.5; 
+rewardMusic.volume = 0.1; 
 
 
 //field image
