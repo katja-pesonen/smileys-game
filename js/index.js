@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-//all variables
+// variables
 let startBtn = document.querySelector("#start-button");
 let restartBtn = document.querySelector("#restart-button");
 let smileyLogo = document.querySelector("#excited-img");
