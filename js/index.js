@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 // variables
 let startBtn = document.querySelector("#start-button");
 let restartBtn = document.querySelector("#restart-button");
+let muteBtn = document.querySelector("#mute-button");
 let smileyLogo = document.querySelector("#excited-img");
 let mixedLogo = document.querySelector("#mixed-img");
 let arrows = document.querySelector("#arrows-img");
@@ -326,6 +327,18 @@ function drawEnding() {
   restartBtn.addEventListener("click", () => {
     window.location.reload();
     
+  }
+  )
+
+  muteBtn.addEventListener("click", () => {
+    if (muteBtn.innerHTML === "Mute") {
+    gameMusic.pause();
+    muteBtn.innerHTML = "Unmute"
+    }
+    else {
+      gameMusic.play();
+      muteBtn.innerHTML = "Mute"
+    }
   }
   )
 
