@@ -158,12 +158,12 @@ function startGame() {
   drawPlayer()
 
   // rocks speed increases as game progresses:
-  if (score > 10) {rockSpeedValue = 4}
-  if (score > 25) {rockSpeedValue = 5}
-  if (score > 40) {rockSpeedValue = 6}
-  if (score > 60) {rockSpeedValue = 7}
-  if (score > 75) {rockSpeedValue = 8}
-  if (score > 90) {rockSpeedValue = 9}
+  if (score > 20) {rockSpeedValue = 4}
+  if (score > 40) {rockSpeedValue = 5}
+  if (score > 70) {rockSpeedValue = 6}
+  if (score > 100) {rockSpeedValue = 7}
+  if (score > 150) {rockSpeedValue = 8}
+  if (score > 250) {rockSpeedValue = 9}
 
 
 // for-loop for the falling rocks
